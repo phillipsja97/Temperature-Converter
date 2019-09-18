@@ -36,9 +36,13 @@ const determineConverter = (e) => {
     }
 };
 
+const clearField = () => {
+    document.getElementById('resultsField').reset;
+};
+
 
 submitButton.addEventListener('click', determineConverter);
-
+clearButton.addEventListener('click', clearField);
 
 
 
