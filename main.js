@@ -21,14 +21,23 @@ const toFahrenheit = () => {
     
 };
 
-submitButton.addEventListener('click', toFahrenheit);
 
-// const toCelsius = () => {
-//     let input = (document.getElementById('inputNumber').value - 32) * 5/9
-//     let celsius = Math.round(input);
-//     printToDom('resultsField', `<h3>${fahrenheit}</h3>`)
-// };
+const toCelsius = () => {
+    let input = (document.getElementById('inputNumber').value - 32) * 5/9
+    let celsius = Math.round(input);
+    printToDom('resultsField', `<h3>${celsius}</h3>`)
+};
 
+const determineConverter = (e) => {
+    if (document.getElementById('inlineRadio1').checked) {
+        toFahrenheit();
+    } else if (document.getElementById('inlineRadio2').checked) {
+        toCelsius();
+    }
+};
+
+
+submitButton.addEventListener('click', determineConverter);
 
 
 
