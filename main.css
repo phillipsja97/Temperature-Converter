@@ -5,3 +5,7 @@ body {
 .title {
     padding: 50px 50px 50px 50px;
 }
+
+.submitButton {
+    padding-bottom: 50px;
+}
