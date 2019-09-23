@@ -1,31 +1,32 @@
 // const input = document.getElementById('submit');
 
 printToDom = (divId, stringToPrint) => {
-    document.getElementById(divId).innerHTML += stringToPrint;
+    document.getElementById(divId).innerHTML = stringToPrint;
 };
 
-// const input = document.getElementById('submit').addEventListener('click', (event) => {
-//     inputSubmit = event.target.id;
 
-// });
-
-// const input = document.getElementById('inputNumber');
-// console.log(input);
-// const celsius = 30;
-// const fahrenheit = 50;
 
 const toFahrenheit = () => {
     let input = document.getElementById('inputNumber').value * (9/5) + 32;
-    let fahrenheit = Math.round(input);
-    printToDom('resultsField', `<h3>${fahrenheit}</h3>`)
-    
+    let tempOutput = Math.round(input);
+    printToDom('output', `<h3>${tempOutput}</h3>`);
+    if (tempOutput > 90) {
+        document.getElementById('output').style.color = 'red';
+    } else if (tempOutput < 32) {
+        document.getElementById('output').style.color ='blue';
+    }
 };
 
 
 const toCelsius = () => {
     let input = (document.getElementById('inputNumber').value - 32) * 5/9
-    let celsius = Math.round(input);
-    printToDom('resultsField', `<h3>${celsius}</h3>`)
+    let tempOutput = Math.round(input);
+    printToDom('output', `<h3>${tempOutput}</h3>`)
+    if (tempOutput > 32) {
+        document.getElementById('output').style.color = 'red';
+    } else if (tempOutput < 0) {
+        document.getElementById('output').style.color ='blue';
+    }
 };
 
 const determineConverter = (e) => {
@@ -36,9 +37,44 @@ const determineConverter = (e) => {
     }
 };
 
+// const clearField = (e) => {
+//     printToDom('resultsField', );
+//     document.getElementById('inputNumber').value = '';
+// };
 
-submitButton.addEventListener('click', determineConverter);
+// const clearField = (e) => {
+//     e.target.id = document.getElementById('resultsField').onClick = clear();
+//     document.getElementById.('inputNumber').value = '';
+// };
 
+// target = document.getElementById("customfield_1000000");
+// function clear()
+// {
+// target.value = "null";
+// }
+// var createbutton = document.getElementById("Create");
+// createbutton.onclick=clear
+
+
+const submitButton = () => {
+    let submitButton = document.getElementById('submitButton');
+    submitButton.addEventListener('click', (determineConverter)
+    )};
+
+    submitButton();
+
+const clearField = () => {
+    let clearButton = document.getElementById('clearButton');
+        clearButton.addEventListener('click', (event) => {
+            document.getElementById('output').remove();
+            document.getElementById('inputNumber').value = '';
+        })
+};
+
+    clearField();
+
+// submitButton.addEventListener('click', determineConverter);
+// clearButton.addEventListener('click', clearField);
 
 
 

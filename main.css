@@ -7,5 +7,21 @@ body {
 }
 
 .submitButton {
-    padding-bottom: 50px;
+    padding-top: 20px;
+}
+
+.results {
+    padding: 10px 10px 10px 10px;
+}
+
+.tempTitle {
+    padding: 10px 10px 10px 10px;
+}
+
+.form-check {
+    padding: 10px 10px 40px 10px;
+}
+
+#clearButton {
+    padding-top: 20px;
 }
