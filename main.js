@@ -39,7 +39,7 @@ const determineConverter = (e) => {
 
 // const clearField = (e) => {
 //     printToDom('resultsField', );
-//     document.getElementById('inputNumber').value = '';
+    document.getElementById('output').innerHTML = '';
 // };
 
 // const clearField = (e) => {
@@ -63,16 +63,25 @@ const submitButton = () => {
 
     submitButton();
 
-const clearField = () => {
-    let clearButton = document.getElementById('clearButton');
-        clearButton.addEventListener('click', (event) => {
-            document.getElementById('output').remove();
-            document.getElementById('inputNumber').value = '';
-        })
-};
+document.getElementById('clearButton').addEventListener('click', function(e) {
+    document.getElementById('output').innerHTML = '';
+    document.getElementById('inputNumber').value = '';
+});
 
-    clearField();
 
+// const clearField = () => {
+//     document.getElementById('output').innerHTML = '';
+// };
+
+// clearField();
+
+window.addEventListener('keyup',function(e){
+  console.log(e.keyCode);
+    if (e.keyCode === 13) {
+      e.preventDefault();
+       determineConverter();
+  }
+});
 // submitButton.addEventListener('click', determineConverter);
 // clearButton.addEventListener('click', clearField);
 
